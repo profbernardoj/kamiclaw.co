@@ -1,6 +1,6 @@
-# ♾️ KamiClaw — AI Inference You Own, Forever Powering Your OpenClaw Agents
+# ♾️ KimiClaw — AI Inference You Own, Forever Powering Your OpenClaw Agents
 
-**Open-source first.** KamiClaw connects your [OpenClaw](https://github.com/openclaw/openclaw) agent to the [Morpheus](https://mor.org) decentralized inference network — putting open-source models like GLM-5 (Opus 4.5-level) front and center as your default, with Claude as a fallback only when needed.
+**Open-source first.** KimiClaw connects your [OpenClaw](https://github.com/openclaw/openclaw) agent to the [Morpheus](https://mor.org) decentralized inference network — putting open-source models like GLM-5 (Opus 4.5-level) front and center as your default, with Claude as a fallback only when needed.
 > **Kimi-focused:** Optimized for Moonshot AI Kimi models. Long context and extended reasoning capabilities.
 
 Your agent runs on inference you own: GLM-5, GLM-4.7 Flash, Kimi K2.5, and 30+ models powered by staked MOR tokens that recycle back to you. No API bills, no credit limits, no surprise costs. MOR is staked — not spent — so you maintain access for as long as you hold your tokens.
@@ -14,31 +14,31 @@ Your agent runs on inference you own: GLM-5, GLM-4.7 Flash, Kimi K2.5, and 30+ m
 **From ClawHub:**
 
 ```bash
-clawhub install kamiclaw-inference
+clawhub install kimiclaw-inference
 ```
 
 **Or one-command installer:**
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/profbernardoj/kamiclaw.co/main/scripts/install-kamiclaw.sh | bash
+curl -fsSL https://raw.githubusercontent.com/profbernardoj/kimiclaw.co/main/scripts/install-kimiclaw.sh | bash
 ```
 
 **Or manual clone:**
 
 ```bash
-git clone https://github.com/profbernardoj/kamiclaw.co.git ~/.openclaw/workspace/skills/kamiclaw
+git clone https://github.com/profbernardoj/kimiclaw.co.git ~/.openclaw/workspace/skills/kimiclaw
 ```
 
-> ⚠️ **Use `kamiclaw-inference`** — not `kamiclaw`. The bare `kamiclaw` slug on ClawHub belongs to a different, unrelated product ("KamiClaw Vault"). See [CLAWHUB_WARNING.md](CLAWHUB_WARNING.md).
+> ⚠️ **Use `kimiclaw-inference`** — not `kimiclaw`. The bare `kimiclaw` slug on ClawHub belongs to a different, unrelated product ("KimiClaw Vault"). See [CLAWHUB_WARNING.md](CLAWHUB_WARNING.md).
 
 Then configure your OpenClaw agent:
 
 ```bash
 # Easiest: Gateway only (no local proxy needed)
-node ~/.openclaw/workspace/skills/kamiclaw/scripts/setup.mjs --template gateway-only --key YOUR_KEY --apply --test --restart
+node ~/.openclaw/workspace/skills/kimiclaw/scripts/setup.mjs --template gateway-only --key YOUR_KEY --apply --test --restart
 
 # Full: Local P2P + Gateway (auto-detects OS)
-node ~/.openclaw/workspace/skills/kamiclaw/scripts/setup.mjs --key YOUR_KEY --apply --test --restart
+node ~/.openclaw/workspace/skills/kimiclaw/scripts/setup.mjs --key YOUR_KEY --apply --test --restart
 ```
 
 Get a free API key at [app.mor.org](https://app.mor.org). Run without `--apply` first to preview changes.
@@ -47,19 +47,19 @@ Get a free API key at [app.mor.org](https://app.mor.org). Run without `--apply` 
 
 ```bash
 # Step 1: Install the Morpheus proxy-router
-bash ~/.openclaw/workspace/skills/kamiclaw/scripts/install.sh
+bash ~/.openclaw/workspace/skills/kimiclaw/scripts/install.sh
 
 # Step 2: Create your wallet (stored in macOS Keychain — no external accounts)
-node ~/.openclaw/workspace/skills/kamiclaw/scripts/kamiclaw-wallet.mjs setup
+node ~/.openclaw/workspace/skills/kimiclaw/scripts/kimiclaw-wallet.mjs setup
 
 # Step 3: Send ETH to the wallet address shown above, then swap for MOR
-node ~/.openclaw/workspace/skills/kamiclaw/scripts/kamiclaw-wallet.mjs swap eth 0.05
+node ~/.openclaw/workspace/skills/kimiclaw/scripts/kimiclaw-wallet.mjs swap eth 0.05
 
 # Step 4: Approve MOR for staking
-node ~/.openclaw/workspace/skills/kamiclaw/scripts/kamiclaw-wallet.mjs approve
+node ~/.openclaw/workspace/skills/kimiclaw/scripts/kimiclaw-wallet.mjs approve
 
 # Step 5: Install the proxy and guardian (auto-starts on boot)
-bash ~/.openclaw/workspace/skills/kamiclaw/scripts/install-proxy.sh
+bash ~/.openclaw/workspace/skills/kimiclaw/scripts/install-proxy.sh
 ```
 
 That's it. Your agent now has decentralized inference — either via the API Gateway (instant) or local P2P (stake MOR for persistent access you own).
@@ -68,9 +68,9 @@ That's it. Your agent now has decentralized inference — either via the API Gat
 
 ## Who Is This For?
 
-**You don't need to be an engineer to use KamiClaw.** If you can copy and paste commands, you can set this up.
+**You don't need to be an engineer to use KimiClaw.** If you can copy and paste commands, you can set this up.
 
-KamiClaw is built for early adopters who:
+KimiClaw is built for early adopters who:
 
 - **Run an OpenClaw agent on a Mac mini, laptop, or VPS** — and want it to stay online 24/7 without babysitting
 - **Use AI daily for real work** — writing, research, analysis, communication — and can't afford downtime when API credits run out at 2 AM
@@ -78,7 +78,7 @@ KamiClaw is built for early adopters who:
 - **Care about decentralization** — you believe AI infrastructure shouldn't depend on a single company's API, and want a censorship-resistant fallback
 - **Want their agent to handle crypto** — DeFi interactions, token management, wallet operations — and need the security to match the stakes
 
-If you've ever had your AI assistant go dark because an API key expired or credits ran out, KamiClaw solves that problem permanently.
+If you've ever had your AI assistant go dark because an API key expired or credits ran out, KimiClaw solves that problem permanently.
 
 ---
 
@@ -91,7 +91,7 @@ If you've ever had your AI assistant go dark because an API key expired or credi
 5. **Repeat forever** — MOR is recycled, not consumed
 
 ```
-Your Agent → KamiClaw Proxy (port 8083) → Morpheus P2P Network → AI Model
+Your Agent → KimiClaw Proxy (port 8083) → Morpheus P2P Network → AI Model
 ```
 
 The proxy handles all the blockchain complexity: opening sessions, renewing before expiry, authenticating with the network, and routing requests. Your agent just talks to a standard OpenAI-compatible API.
@@ -235,19 +235,19 @@ When a session ends, your MOR comes back. Open a new session with the same token
 |--------|---------|
 | **Setup (recommended)** | `node scripts/setup.mjs --key YOUR_KEY --apply --test --restart` |
 | Setup (dry-run) | `node scripts/setup.mjs` |
-| Install (ClawHub) | `clawhub install kamiclaw-inference` |
-| Install (script) | `curl -fsSL https://raw.githubusercontent.com/profbernardoj/kamiclaw.co/main/scripts/install-kamiclaw.sh \| bash` |
-| Update (ClawHub) | `clawhub update kamiclaw-inference` |
-| Update (git) | `cd skills/kamiclaw && git pull` |
-| Check version | `bash skills/kamiclaw/scripts/install-kamiclaw.sh --check` |
-| Install router | `bash skills/kamiclaw/scripts/install.sh` |
-| Create wallet | `node scripts/kamiclaw-wallet.mjs setup` |
-| Check balance | `node scripts/kamiclaw-wallet.mjs balance` |
-| Swap ETH→MOR | `node scripts/kamiclaw-wallet.mjs swap eth 0.05` |
-| Swap USDC→MOR | `node scripts/kamiclaw-wallet.mjs swap usdc 50` |
-| Approve MOR | `node scripts/kamiclaw-wallet.mjs approve` |
-| Install proxy + guardian | `bash skills/kamiclaw/scripts/install-proxy.sh` |
-| Start router | `bash skills/kamiclaw/scripts/start.sh` |
+| Install (ClawHub) | `clawhub install kimiclaw-inference` |
+| Install (script) | `curl -fsSL https://raw.githubusercontent.com/profbernardoj/kimiclaw.co/main/scripts/install-kimiclaw.sh \| bash` |
+| Update (ClawHub) | `clawhub update kimiclaw-inference` |
+| Update (git) | `cd skills/kimiclaw && git pull` |
+| Check version | `bash skills/kimiclaw/scripts/install-kimiclaw.sh --check` |
+| Install router | `bash skills/kimiclaw/scripts/install.sh` |
+| Create wallet | `node scripts/kimiclaw-wallet.mjs setup` |
+| Check balance | `node scripts/kimiclaw-wallet.mjs balance` |
+| Swap ETH→MOR | `node scripts/kimiclaw-wallet.mjs swap eth 0.05` |
+| Swap USDC→MOR | `node scripts/kimiclaw-wallet.mjs swap usdc 50` |
+| Approve MOR | `node scripts/kimiclaw-wallet.mjs approve` |
+| Install proxy + guardian | `bash skills/kimiclaw/scripts/install-proxy.sh` |
+| Start router | `bash skills/kimiclaw/scripts/start.sh` |
 | Proxy health | `curl http://127.0.0.1:8083/health` |
 | Route a prompt | `node scripts/router.mjs "your prompt here"` |
 | Route (JSON) | `node scripts/router.mjs --json "your prompt"` |
@@ -259,8 +259,8 @@ When a session ends, your MOR comes back. Open a new session with the same token
 | Scan a skill | `node security/skillguard/src/cli.js scan <path>` |
 | Security audit | `bash security/clawdstrike/scripts/collect_verified.sh` |
 | Guardian logs | `tail -f ~/.openclaw/logs/guardian.log` |
-| **Always-on setup** | `sudo bash skills/kamiclaw/scripts/always-on.sh` |
-| Restore power defaults | `sudo bash skills/kamiclaw/scripts/always-on.sh --restore` |
+| **Always-on setup** | `sudo bash skills/kimiclaw/scripts/always-on.sh` |
+| Restore power defaults | `sudo bash skills/kimiclaw/scripts/always-on.sh --restore` |
 | Check power settings | `pmset -g` |
 
 ---
